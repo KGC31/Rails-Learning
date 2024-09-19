@@ -9,3 +9,14 @@
                     turbo_confirm: "Are you sure?"
                   } %></li>
 </ul>
+
+<h2>Comments</h2>
+
+<% if @article.comments.any? %>
+    <%= render @article.comments %>
+<% else %>
+    <p>No comments</p>
+<% end %>
+
+
+<%= render 'comments/form', article: @article %>
